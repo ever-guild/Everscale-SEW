@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "https://EverscaleGuild.github.io/Everscale-SEW/static/css/main.ca1e9a47.css",
+    "main.js": "https://EverscaleGuild.github.io/Everscale-SEW/static/js/main.114efe4d.js",
+    "static/js/787.d86f06e6.chunk.js": "https://EverscaleGuild.github.io/Everscale-SEW/static/js/787.d86f06e6.chunk.js",
+    "index.html": "https://EverscaleGuild.github.io/Everscale-SEW/index.html",
+    "main.ca1e9a47.css.map": "https://EverscaleGuild.github.io/Everscale-SEW/static/css/main.ca1e9a47.css.map",
+    "main.114efe4d.js.map": "https://EverscaleGuild.github.io/Everscale-SEW/static/js/main.114efe4d.js.map",
+    "787.d86f06e6.chunk.js.map": "https://EverscaleGuild.github.io/Everscale-SEW/static/js/787.d86f06e6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ca1e9a47.css",
+    "static/js/main.114efe4d.js"
+  ]
+}
