@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "https://everscaleguild.github.io/Everscale-SEW/static/css/main.f144b2f3.css",
-    "main.js": "https://everscaleguild.github.io/Everscale-SEW/static/js/main.68b9058b.js",
+    "main.js": "https://everscaleguild.github.io/Everscale-SEW/static/js/main.06e8c2d5.js",
     "static/js/787.d86f06e6.chunk.js": "https://everscaleguild.github.io/Everscale-SEW/static/js/787.d86f06e6.chunk.js",
     "index.html": "https://everscaleguild.github.io/Everscale-SEW/index.html",
     "static/media/background.svg": "https://everscaleguild.github.io/Everscale-SEW/static/media/background.bc43822c0ce232aad7a7.svg",
     "main.f144b2f3.css.map": "https://everscaleguild.github.io/Everscale-SEW/static/css/main.f144b2f3.css.map",
-    "main.68b9058b.js.map": "https://everscaleguild.github.io/Everscale-SEW/static/js/main.68b9058b.js.map",
+    "main.06e8c2d5.js.map": "https://everscaleguild.github.io/Everscale-SEW/static/js/main.06e8c2d5.js.map",
     "787.d86f06e6.chunk.js.map": "https://everscaleguild.github.io/Everscale-SEW/static/js/787.d86f06e6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f144b2f3.css",
-    "static/js/main.68b9058b.js"
+    "static/js/main.06e8c2d5.js"
   ]
 }
