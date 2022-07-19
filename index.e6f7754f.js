@@ -533,6 +533,8 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"lyqAI":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "currentUser", ()=>currentUser);
 var _everscaleInpageProvider = require("everscale-inpage-provider");
 var _bignumberJs = require("bignumber.js");
 var _crypto = require("crypto");
@@ -556,6 +558,9 @@ const nameOptionList = [
 ];
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + max);
+}
+async function currentUser() {
+    return (await (0, _blockchain.selectedConnection)("everscale", provider)).address;
 }
 function nameOptionListRandom() {
     return nameOptionList[random(0, 2)];
@@ -749,7 +754,7 @@ async function mainFlow() {
     await subscribe();
 }
 async function refresh() {
-    await (0, _ui.betListRender)(await listBet());
+    await (0, _ui.betListRender)(await currentUser(), await listBet());
     (0, _browser.action)(actionList);
 }
 async function App() {
@@ -39685,6 +39690,7 @@ function userRender(user, network = "everscale") {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "beatRender", ()=>beatRender);
+parcelHelpers.export(exports, "actionRender", ()=>actionRender);
 parcelHelpers.export(exports, "redeemRender", ()=>redeemRender);
 parcelHelpers.export(exports, "betListRender", ()=>betListRender);
 var _browser = require("../browser");
@@ -39714,6 +39720,12 @@ function beatRender(value) {
         type="button" class="btn btn-secondary">R</button>
 </div>`;
 }
+function actionRender(currentUser, value) {
+    const isOwner = value.user.toString() == currentUser;
+    if (value.beat && isOwner) return redeemRender(value);
+    else if (!value.beat) return beatRender(value);
+    return '<div class="alert alert-warning" role="alert">waiting</div>';
+}
 function redeemRender(value) {
     return `<div class="btn-group" role="group">
     <button 
@@ -39723,8 +39735,7 @@ function redeemRender(value) {
     type="button" class="btn btn-secondary">redeem</button>
 </div>`;
 }
-function betListRender(list) {
-    console.log(list);
+async function betListRender(currentUser, list) {
     let out = "";
     list.forEach((value, key)=>{
         out += `<div class="card" style="width: 18rem;">
@@ -39737,8 +39748,8 @@ function betListRender(list) {
                             <div class="p-2">${value.beat ? (0, _util.avatarsRender)(value.beat.user.toString()) : "<h1>?</h1>"}</div>
                         </div>
                     </div>
+                    ${actionRender(currentUser, value)}
                 </div>
-                <div class="card-body">${value.beat ? redeemRender(value) : beatRender(value)}</div>
             </div>`;
     });
     (0, _browser.behavior)("betList", (elem)=>elem.innerHTML = out);
